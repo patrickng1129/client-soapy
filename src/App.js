@@ -36,7 +36,7 @@ function App() {
   const fetchData = async () => {
     setIsEventLoading(true);
     try {
-      const response = await axios.get("/api/events");
+      const response = await axios.get("https://soapy-backend-908862fc8130.herokuapp.com/api/events");
       setEventData(response.data.reverse());
     } catch (error) {
       console.error("There was an error retrieving the data!", error);

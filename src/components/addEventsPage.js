@@ -44,7 +44,7 @@ const AddEventsPage = ({ fetchData, editingData, setEditingData }) => {
     try {
       let response;
       if (!!editingData) {
-        response = await axios.put(`/api/events/${editingData._id}`, {
+        response = await axios.put(`https://soapy-backend-908862fc8130.herokuapp.com/api/events/${editingData._id}`, {
           addedBy: currentUser,
           eventName,
           action,
@@ -55,7 +55,7 @@ const AddEventsPage = ({ fetchData, editingData, setEditingData }) => {
           completed: false,
         });
       } else {
-        response = await axios.post("/api/events", {
+        response = await axios.post("https://soapy-backend-908862fc8130.herokuapp.com/api/events", {
           addedBy: currentUser,
           eventName,
           action,

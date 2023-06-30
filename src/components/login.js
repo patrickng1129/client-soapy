@@ -16,7 +16,7 @@ const Login = ({ setAuthenticated, authenticated }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/check-password", { password });
+      const response = await axios.post("https://soapy-backend-908862fc8130.herokuapp.com/api/check-password", { password });
       if (response.data === "Correct") {
         setAuthenticated(true);
         localStorage.setItem("lastAuthenticated", Date.now());
